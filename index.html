@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Callback OAuth Instagram</title>
+</head>
+<body>
+  <h2>Procesando autorización...</h2>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const vendor = params.get('state');
+
+    if (code && vendor) {
+      const redirectUrl = `https://${vendor}.myvtex.com/api/register-instagram-feed?code=${encodeURIComponent(code)}`;
+      window.location.href = redirectUrl;
+    } else {
+      document.body.innerHTML = '<h3>Faltan parámetros en la URL.</h3>';
+    }
+  </script>
+</body>
+</html>
