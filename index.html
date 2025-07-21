@@ -12,7 +12,7 @@
     const vendor = params.get('state');
 
     if (code && vendor) {
-      const redirectUrl = `https://${vendor}.myvtex.com/api/register-instagram-feed?code=${encodeURIComponent(code)}`;
+      const redirectUrl = `https://${vendor}.myvtex.com/_v/apiInstagram/register-instagram-feed?code=${encodeURIComponent(code)}`;
       window.location.href = redirectUrl;
     } else {
       document.body.innerHTML = '<h3>Faltan parámetros en la URL.</h3>';
